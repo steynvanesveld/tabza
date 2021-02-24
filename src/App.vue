@@ -1,25 +1,33 @@
 <template>
-  <HelloWorld />
+  <AppWrapper />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import AppWrapper from "./components/AppWrapper.vue";
 
 export default defineComponent({
   name: "App",
   components: {
-    HelloWorld,
+    AppWrapper,
   },
 });
 </script>
 
 <style>
-#app {
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
+} */
 </style>

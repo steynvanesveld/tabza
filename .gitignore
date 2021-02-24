@@ -1,5 +1,9 @@
+# defaults
 node_modules
 .DS_Store
 dist
 dist-ssr
 *.local
+
+# dotenv environment variables file
+.env
