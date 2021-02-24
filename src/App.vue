@@ -1,15 +1,15 @@
 <template>
-  <HelloWorld />
+  <AppWrapper />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import AppWrapper from "./components/AppWrapper.vue";
 
 export default defineComponent({
   name: "App",
   components: {
-    HelloWorld,
+    AppWrapper,
   },
 });
 </script>
