@@ -1,5 +1,7 @@
 <template>
-  <section class="clock">{{ time }}</section>
+  <aside>
+    <time>{{ time }}</time>
+  </aside>
 </template>
 
 <script lang="ts">
@@ -20,9 +22,9 @@ export default defineComponent({
       const hours = this.makeDoubleDigits(today.getHours());
       const minutes = this.makeDoubleDigits(today.getMinutes());
 
-      setTimeout(this.getTime, 100);
-
       this.time = `${hours}:${minutes}`;
+
+      setTimeout(this.getTime, 1000);
     },
 
     makeDoubleDigits(i: number): string {
@@ -43,7 +45,17 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.clock {
+aside {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 80px;
+}
+
+time {
   color: #ffffff;
+  font-size: 8rem;
+  line-height: 8rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 </style>

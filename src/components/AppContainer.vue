@@ -29,14 +29,16 @@ export default defineComponent({
   },
 
   computed: {
-    getBackgroundImage(): URL {
-      const resizedImage = new URL("https://images.weserv.nl");
+    getBackgroundImage(): URL | undefined {
+      if (this.loaded) {
+        const resizedImage = new URL("https://images.weserv.nl");
 
-      resizedImage.searchParams.append("url", this.backgroundImage);
-      resizedImage.searchParams.append("w", this.backgroundImageWidth);
-      resizedImage.searchParams.append("h", this.backgroundImageHeight);
+        resizedImage.searchParams.append("url", this.backgroundImage);
+        resizedImage.searchParams.append("w", this.backgroundImageWidth);
+        resizedImage.searchParams.append("h", this.backgroundImageHeight);
 
-      return resizedImage;
+        return resizedImage;
+      }
     },
   },
 
@@ -54,6 +56,7 @@ export default defineComponent({
         .then((apod: Apod) => {
           if (apod.hdurl) {
             this.backgroundImage = apod.hdurl;
+            this.loaded = true;
           }
         });
     },
@@ -67,6 +70,9 @@ export default defineComponent({
 
 <style scoped>
 .container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
   height: 100vh;
   width: 100vw;
   background-repeat: no-repeat;
