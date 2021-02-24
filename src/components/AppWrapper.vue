@@ -56,5 +56,9 @@ export default defineComponent({
 .wrapper {
   height: 100vh;
   width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-color: #222;
 }
 </style>
