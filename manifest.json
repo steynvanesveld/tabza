@@ -1,0 +1,10 @@
+{
+  "name": "Tabza",
+  "version": "0.1",
+  "description": "Open new tabz with Tabza",
+  "manifest_version": 3,
+  "chrome_url_overrides": {
+    "newtab": "./dist/index.html"
+  },
+  "permissions": ["tabs"]
+}
