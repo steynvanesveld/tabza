@@ -1,15 +1,15 @@
 <template>
-  <app-container />
+  <Container />
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import AppContainer from "./components/AppContainer.vue";
+import Container from "./components/Container/Container.vue";
 
 export default defineComponent({
   name: "App",
   components: {
-    AppContainer,
+    Container,
   },
 });
 </script>

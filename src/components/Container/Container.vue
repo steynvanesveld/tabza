@@ -3,20 +3,24 @@
     class="container"
     :style="{ 'background-image': 'url(' + getBackgroundImage + ')' }"
   >
-    <app-rss />
-    <app-clock />
+    <Rss />
+
+    <aside class="aside">
+      <Clock />
+    </aside>
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import AppRss from "./AppRss.vue";
-import AppClock from "./AppClock.vue";
-import { Apod } from "../models/apod.model";
+import Rss from "./../Rss/Rss.vue";
+import Clock from "./../Clock/Clock.vue";
+import { Apod } from "../../models/apod.model";
 
 export default defineComponent({
-  components: { AppClock, AppRss },
-  name: "AppContainer",
+  components: { Clock, Rss },
+
+  name: "Container",
 
   data() {
     return {
@@ -79,5 +83,12 @@ export default defineComponent({
   background-size: cover;
   background-position: center center;
   background-color: #222;
+}
+
+.aside {
+  padding: 0 80px;
+  display: flex;
+  align-items: center;
+  height: 100%;
 }
 </style>

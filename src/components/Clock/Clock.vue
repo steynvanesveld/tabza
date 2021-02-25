@@ -1,14 +1,12 @@
 <template>
-  <aside>
-    <time>{{ time }}</time>
-  </aside>
+  <time class="time">{{ time }}</time>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  name: "AppClock",
+  name: "Clock",
 
   data() {
     return {
@@ -46,14 +44,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-aside {
-  display: flex;
-  align-items: center;
-  height: 100%;
-  padding: 0 80px;
-}
-
-time {
+.time {
   font-size: 96px;
   line-height: 96px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
