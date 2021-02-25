@@ -8,7 +8,7 @@
         @click="activateRssSource(rssSource)"
         :class="['navigation-item', rssSource.active ? 'active' : '']"
       >
-        <img :src="`/logos/${rssSource.logo}`" :alt="rssSource.title" />
+        <img :src="`./logos/${rssSource.logo}`" :alt="rssSource.title" />
       </a>
     </nav>
     <section class="feeds">
@@ -91,10 +91,10 @@ export default defineComponent({
 
 <style scoped>
 .rss {
-  color: #fff;
   padding: 0 16px;
   height: 100%;
-  max-width: 720px;
+  width: 100%;
+  max-width: 800px;
   display: flex;
   flex-direction: column;
 }
@@ -121,7 +121,7 @@ export default defineComponent({
 
 img {
   width: 100%;
-  max-height: 24px;
+  max-height: 20px;
   filter: brightness(0) invert(1);
 }
 
@@ -131,10 +131,12 @@ img {
 
 .feeds::-webkit-scrollbar {
   width: 4px;
+  border-radius: 8px;
 }
 
 .feeds::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 20px;
 }
 
 .feed {
@@ -144,19 +146,22 @@ img {
 }
 
 .feed-item {
-  color: #fff;
+  color: currentColor;
   text-decoration: none;
   padding: 8px;
   position: relative;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: 0.2s background-color ease-in-out;
-}
-
-.feed-item:visited {
-  background-color: rgba(0, 0, 0, 1);
+  transition: 0.2s all ease-in-out;
+  border-radius: 4px;
 }
 
 .feed-item:hover {
   background-color: rgba(0, 0, 0, 0.75);
+  padding-left: 12px;
+}
+
+.feed-item:visited {
+  overflow: 0.5;
+  background-color: rgba(0, 0, 0, 1);
 }
 </style>

@@ -21,10 +21,11 @@ export default defineComponent({
       const today = new Date();
       const hours = this.makeDoubleDigits(today.getHours());
       const minutes = this.makeDoubleDigits(today.getMinutes());
+      const seconds = this.makeDoubleDigits(today.getSeconds());
 
-      this.time = `${hours}:${minutes}`;
+      this.time = `${hours}:${minutes}:${seconds}`;
 
-      setTimeout(this.getTime, 1000);
+      setTimeout(this.getTime, 100);
     },
 
     makeDoubleDigits(i: number): string {
@@ -53,9 +54,8 @@ aside {
 }
 
 time {
-  color: #ffffff;
-  font-size: 8rem;
-  line-height: 8rem;
+  font-size: 96px;
+  line-height: 96px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 </style>
