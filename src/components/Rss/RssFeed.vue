@@ -5,11 +5,17 @@
     :key="rssSource.id"
     v-show="rssSource.active"
   >
-    <Card v-for="(item, index) in rssSource?.feed?.items" :key="index">
-      <a :href="item.link" target="_blank">
+    <a
+      class="link"
+      :href="item.link"
+      target="_blank"
+      v-for="(item, index) in rssSource?.feed?.items"
+      :key="index"
+    >
+      <Card>
         {{ item.title }}
-      </a>
-    </Card>
+      </Card>
+    </a>
   </section>
 </template>
 
@@ -50,6 +56,15 @@ export default defineComponent({
   &::-webkit-scrollbar-thumb {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 20px;
+  }
+}
+
+.link {
+  color: currentColor;
+  text-decoration: none;
+
+  &:visited {
+    color: #999999;
   }
 }
 </style>

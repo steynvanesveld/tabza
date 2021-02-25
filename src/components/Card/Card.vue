@@ -13,8 +13,10 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "../../styles/abstracts/variables.scss";
+
 .card {
-  padding: 16px;
+  padding: $global-spacing * 2;
   position: relative;
   background-color: rgba(0, 0, 0, 0.5);
   transition: 0.2s all ease-in-out;
@@ -22,16 +24,7 @@ export default defineComponent({
 
   &:hover {
     background-color: rgba(0, 0, 0, 0.75);
-    padding-left: 24px;
-  }
-
-  ::v-slotted(a) {
-    color: currentColor;
-    text-decoration: none;
-
-    &:visited {
-      color: #999999;
-    }
+    padding-left: $global-spacing * 3;
   }
 }
 </style>
