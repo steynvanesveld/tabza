@@ -73,6 +73,8 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "../../styles/abstracts/variables.scss";
+
 .container {
   display: flex;
   align-items: flex-start;
@@ -85,7 +87,7 @@ export default defineComponent({
   background-color: #222;
 
   .aside {
-    padding: 0 80px;
+    padding: 0 ($global-spacing * 10);
     display: flex;
     align-items: center;
     height: 100%;

@@ -11,7 +11,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import rssSources from "../../../public/rss-sources.json";
+import rssSources from "../../assets/json/rss-sources.json";
 
 import RssFeed from "./RssFeed.vue";
 import RssNavigation from "./RssNavigation.vue";
@@ -72,8 +72,10 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "../../styles/abstracts/variables.scss";
+
 .rss {
-  padding: 0 16px;
+  padding: 0 $global-spacing * 2;
   height: 100%;
   width: 100%;
   max-width: 800px;

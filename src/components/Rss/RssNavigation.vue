@@ -8,7 +8,7 @@
       :class="['item', rssSource.active ? 'active' : '']"
     >
       <img
-        :src="`./logos/${rssSource.logo}`"
+        :src="`./images/${rssSource.logo}`"
         :alt="rssSource.title"
         class="logo"
       />
@@ -41,16 +41,18 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "../../styles/abstracts/variables.scss";
+
 .navigation {
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0 -8px;
-  padding: 16px 0;
+  margin: 0 (-$global-spacing);
+  padding: $global-spacing * 2 0;
 
   .item {
     flex: 1 1 0px;
-    padding: 0 8px;
+    padding: 0 $global-spacing;
     text-align: center;
     opacity: 0.5;
     transition: 0.2s opacity ease-in-out;

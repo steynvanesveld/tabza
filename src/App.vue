@@ -14,21 +14,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 16px;
-  line-height: 26px;
-  color: #ffffff;
-}
+<style lang="scss">
+@import "./styles/base/reset.scss";
+@import "./styles/base/typography.scss";
 </style>

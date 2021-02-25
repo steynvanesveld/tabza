@@ -33,12 +33,14 @@ export default defineComponent({
 </script>
 
 <style scoped lang="scss">
+@import "../../styles/abstracts/variables.scss";
+
 .feed {
   display: grid;
-  grid-gap: 8px;
+  grid-gap: $global-spacing;
   grid-template-rows: repeat(auto-fill, 1fr);
   overflow-y: scroll;
-  padding-right: 8px;
+  padding-right: $global-spacing;
 
   &::-webkit-scrollbar {
     width: 4px;
