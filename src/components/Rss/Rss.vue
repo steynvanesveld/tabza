@@ -71,7 +71,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .rss {
   padding: 0 16px;
   height: 100%;

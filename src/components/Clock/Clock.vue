@@ -43,7 +43,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .time {
   font-size: 96px;
   line-height: 96px;

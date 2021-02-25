@@ -40,32 +40,32 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .navigation {
   display: flex;
   flex-direction: row;
   align-items: center;
   margin: 0 -8px;
   padding: 16px 0;
-}
 
-.item {
-  flex: 1 1 0px;
-  padding: 0 8px;
-  text-align: center;
-  opacity: 0.5;
-  transition: 0.2s opacity ease-in-out;
-}
+  .item {
+    flex: 1 1 0px;
+    padding: 0 8px;
+    text-align: center;
+    opacity: 0.5;
+    transition: 0.2s opacity ease-in-out;
 
-.item.active {
-  opacity: 1;
-}
+    &.active {
+      opacity: 1;
+    }
 
-.logo {
-  width: 100%;
-  max-height: 24px;
-  height: 100%;
-  object-fit: contain;
-  filter: brightness(0) invert(1);
+    .logo {
+      width: 100%;
+      max-height: 24px;
+      height: 100%;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+  }
 }
 </style>

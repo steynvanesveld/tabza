@@ -32,22 +32,22 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .feed {
   display: grid;
   grid-gap: 8px;
   grid-template-rows: repeat(auto-fill, 1fr);
   overflow-y: scroll;
   padding-right: 8px;
-}
 
-.feed::-webkit-scrollbar {
-  width: 4px;
-  border-radius: 8px;
-}
+  &::-webkit-scrollbar {
+    width: 4px;
+    border-radius: 8px;
+  }
 
-.feed::-webkit-scrollbar-thumb {
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 20px;
+  &::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+  }
 }
 </style>

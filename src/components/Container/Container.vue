@@ -72,7 +72,7 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .container {
   display: flex;
   align-items: flex-start;
@@ -83,12 +83,12 @@ export default defineComponent({
   background-size: cover;
   background-position: center center;
   background-color: #222;
-}
 
-.aside {
-  padding: 0 80px;
-  display: flex;
-  align-items: center;
-  height: 100%;
+  .aside {
+    padding: 0 80px;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
 }
 </style>

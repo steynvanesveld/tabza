@@ -12,26 +12,26 @@ export default defineComponent({
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .card {
   padding: 16px;
   position: relative;
   background-color: rgba(0, 0, 0, 0.5);
   transition: 0.2s all ease-in-out;
   border-radius: 4px;
-}
 
-.card:hover {
-  background-color: rgba(0, 0, 0, 0.75);
-  padding-left: 24px;
-}
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.75);
+    padding-left: 24px;
+  }
 
-.card ::v-slotted(a) {
-  color: currentColor;
-  text-decoration: none;
-}
+  ::v-slotted(a) {
+    color: currentColor;
+    text-decoration: none;
 
-.card ::v-slotted(a):visited {
-  color: #999999;
+    &:visited {
+      color: #999999;
+    }
+  }
 }
 </style>
