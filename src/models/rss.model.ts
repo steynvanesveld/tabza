@@ -1,3 +1,5 @@
+import { RssFeed } from "./rss-feed.model";
+
 export class Rss {
-  constructor(public url: string) {}
+  constructor(public feed: RssFeed) {}
 }

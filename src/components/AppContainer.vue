@@ -3,19 +3,19 @@
     class="container"
     :style="{ 'background-image': 'url(' + getBackgroundImage + ')' }"
   >
-    <app-rss-feed />
+    <app-rss />
     <app-clock />
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
+import AppRss from "./AppRss.vue";
 import AppClock from "./AppClock.vue";
-import AppRssFeed from "./AppRssFeed.vue";
 import { Apod } from "../models/apod.model";
 
 export default defineComponent({
-  components: { AppClock, AppRssFeed },
+  components: { AppClock, AppRss },
   name: "AppContainer",
 
   data() {
@@ -23,8 +23,8 @@ export default defineComponent({
       loaded: false,
       backgroundImage:
         "https://images-assets.nasa.gov/image/PIA15416/PIA15416~medium.jpg",
-      backgroundImageWidth: "1920",
-      backgroundImageHeight: "1080",
+      backgroundImageWidth: "2560",
+      backgroundImageHeight: "1440",
     };
   },
 

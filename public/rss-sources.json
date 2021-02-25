@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "url": "http://feeds.nos.nl/nosnieuwsalgemeen",
+    "logo": "nos.svg"
+  },
+  {
+    "id": 2,
+    "url": "http://feeds.feedburner.com/tweakers/nieuws",
+    "logo": "tweakers.svg"
+  },
+  {
+    "id": 3,
+    "url": "http://css-tricks.com/feed",
+    "logo": "css-tricks.svg"
+  },
+  {
+    "id": 4,
+    "url": "https://www.smashingmagazine.com/feed",
+    "logo": "smashing-magazine.svg"
+  }
+]
