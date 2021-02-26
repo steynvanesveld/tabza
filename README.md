@@ -3,7 +3,7 @@
 An open-source Google Chrome Extension for personal use which provides a customized page when opening a new tab.
 It overrides the default page, while keeping the omnibar feature.
 
-**Waiting for review** Available at the [chrome web store](https://chrome.google.com/webstore/detail/hiecjakbnemnfkbpmalepdoacakcobpe)
+Available at the [chrome web store](https://chrome.google.com/webstore/detail/hiecjakbnemnfkbpmalepdoacakcobpe)
 
 ### To-do
 
