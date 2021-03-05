@@ -48,6 +48,5 @@ export default defineComponent({
   font-size: 96px;
   line-height: 96px;
   font-weight: 400;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 </style>

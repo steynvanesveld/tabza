@@ -1,24 +1,30 @@
 <template>
-  <section
+  <main
     class="container"
     :style="{ 'background-image': 'url(' + getBackgroundImage + ')' }"
   >
     <Rss />
 
     <aside class="aside">
-      <Clock />
+      <section class="row">
+        <Spotify />
+      </section>
+      <section class="row">
+        <Clock />
+      </section>
     </aside>
-  </section>
+  </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import Rss from "./../Rss/Rss.vue";
 import Clock from "./../Clock/Clock.vue";
+import Spotify from "../Spotify/Spotify.vue";
 import { Apod } from "../../models/apod.model";
 
 export default defineComponent({
-  components: { Clock, Rss },
+  components: { Clock, Rss, Spotify },
 
   name: "Container",
 
@@ -89,8 +95,23 @@ export default defineComponent({
   .aside {
     padding: 0 ($global-spacing * 10);
     display: flex;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
     height: 100%;
+
+    .row {
+      flex: 1 1 auto;
+      align-items: center;
+      justify-content: flex-end;
+      display: flex;
+      width: 100%;
+      padding: ($global-spacing * 10) 0;
+
+      &:first-child {
+        flex: none;
+      }
+    }
   }
 }
 </style>

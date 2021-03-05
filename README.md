@@ -26,6 +26,7 @@ You can install it as an local chrome extension, without having to deploy it to 
 
 * Create an `.env` file in the project's root directory. An example can be found in `.env.example`.
   - API key for Astronomy Picture of the Day by NASA can be generated here https://api.nasa.gov/
+  - API details for Spotify can be generated here https://developer.spotify.com/documentation/general/guides/app-settings
 
 ### Development
 
