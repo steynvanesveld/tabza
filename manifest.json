@@ -1,6 +1,6 @@
 {
   "name": "Tabza",
-  "version": "0.2",
+  "version": "0.2.0",
   "description": "Open new tabz with Tabza",
   "manifest_version": 3,
   "chrome_url_overrides": {
