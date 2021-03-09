@@ -60,8 +60,9 @@ export default defineComponent({
         .then((apod: Apod) => {
           if (apod.hdurl) {
             this.backgroundImage = apod.hdurl;
-            this.loaded = true;
           }
+
+          this.loaded = true;
         });
     },
   },
