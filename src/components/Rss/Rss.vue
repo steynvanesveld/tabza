@@ -32,6 +32,12 @@ export default defineComponent({
   },
 
   methods: {
+    fetchLocalStorage(): void {
+      if (localStorage.rssSources) {
+        this.rssSources = JSON.parse(localStorage.rssSources);
+      }
+    },
+
     fetchRssFeeds(): void {
       this.rssSources.forEach((rssSource: RssSource) => {
         const rssCorsProxy = new URL(this.rssCorsProxy);
@@ -42,6 +48,7 @@ export default defineComponent({
           .then((response) => response.json())
           .then((rss: Rss) => {
             rssSource.feed = rss.feed;
+            localStorage.rssSources = JSON.stringify(this.rssSources);
           });
       });
     },
@@ -65,6 +72,7 @@ export default defineComponent({
   },
 
   created() {
+    this.fetchLocalStorage();
     this.fetchRssFeeds();
     this.activateRandomRssSource();
   },
