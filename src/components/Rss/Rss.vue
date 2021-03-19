@@ -42,6 +42,7 @@ export default defineComponent({
           .then((response) => response.json())
           .then((rss: Rss) => {
             rssSource.feed = rss.feed;
+            localStorage.rssSources = JSON.stringify(this.rssSources);
           });
       });
     },
@@ -65,6 +66,10 @@ export default defineComponent({
   },
 
   created() {
+    if (localStorage.rssSources) {
+      this.rssSources = JSON.parse(localStorage.rssSources);
+    }
+
     this.fetchRssFeeds();
     this.activateRandomRssSource();
   },
