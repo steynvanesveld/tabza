@@ -19,7 +19,7 @@ export default defineComponent({
   padding: $global-spacing * 2;
   position: relative;
   background-color: rgba(0, 0, 0, 0.5);
-  transition: 0.2s all ease-in-out;
+  transition: 0.2s padding-left ease-in-out, 0.2s background-color ease-in-out;
   border-radius: 4px;
 
   &:hover {
