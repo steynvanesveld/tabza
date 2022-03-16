@@ -5,11 +5,6 @@ It overrides the default page, while keeping the omnibar feature.
 
 Available at the [chrome web store](https://chrome.google.com/webstore/detail/hiecjakbnemnfkbpmalepdoacakcobpe)
 
-### To-do
-
-- [ ] Aliases that replace relative paths (open issue with Vite)
-- [ ] Spotify integration
-
 ## Open for modification
 
 This project can be downloaded and modified by anyone interested.
@@ -26,6 +21,7 @@ You can install it as an local chrome extension, without having to deploy it to 
 
 * Create an `.env` file in the project's root directory. An example can be found in `.env.example`.
   - API key for Astronomy Picture of the Day by NASA can be generated here https://api.nasa.gov/
+  - API key for Bridged App Services (RSS feed without CORS issues) https://github.com/gridaco/base/issues/23
 
 ### Development
 
