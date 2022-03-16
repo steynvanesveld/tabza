@@ -1,15 +1,15 @@
 <template>
   <section
     class="feed"
-    v-for="rssSource in rssSources"
-    :key="rssSource.id"
-    v-show="rssSource.active"
+    v-for="rss in rssFeed"
+    :key="rss.id"
+    v-show="rss.active"
   >
     <a
       class="link"
       :href="item.link"
       target="_blank"
-      v-for="(item, index) in rssSource?.feed?.items"
+      v-for="(item, index) in rss?.items"
       :key="index"
     >
       <Card>
@@ -21,7 +21,7 @@
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { RssSource } from "../../models/rss-source.model";
+import { Rss } from "../../models/rss.model";
 import Card from "../Card/Card.vue";
 
 export default defineComponent({
@@ -30,8 +30,8 @@ export default defineComponent({
   components: { Card },
 
   props: {
-    rssSources: {
-      type: Array as PropType<RssSource[]>,
+    rssFeed: {
+      type: Array as PropType<Rss[]>,
       required: true,
     },
   },

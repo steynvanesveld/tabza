@@ -1,23 +1,23 @@
 <template>
   <section class="rss">
     <RssNavigation
-      :rssSources="rssSources"
+      :rssFeed="rssFeed"
       @navigationItemClick="activateRssSource($event)"
     />
 
-    <RssFeed :rssSources="rssSources" />
+    <RssFeed :rssFeed="rssFeed" />
   </section>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import rssSources from "../../assets/json/rss-sources.json";
+import rssFeed from "../../assets/json/rss-feed.json";
 
 import RssFeed from "./RssFeed.vue";
 import RssNavigation from "./RssNavigation.vue";
 
 import { Rss } from "../../models/rss.model";
-import { RssSource } from "../../models/rss-source.model";
+import { RssItem } from "../../models/rss-item.model";
 
 export default defineComponent({
   components: { RssNavigation, RssFeed },
@@ -25,47 +25,59 @@ export default defineComponent({
 
   data() {
     return {
-      rssSources: rssSources,
-      rssCorsProxy:
-        "https://wt-c2bde7d7dfc8623f121b0eb5a7102930-0.sandbox.auth0-extend.com/getRss",
+      rssFeed: rssFeed,
+      rssCorsProxy: "https://cors.bridged.cc/",
     };
   },
 
   methods: {
     fetchLocalStorage(): void {
-      if (localStorage.rssSources) {
-        this.rssSources = JSON.parse(localStorage.rssSources);
+      if (localStorage.rssFeed) {
+        this.rssFeed = JSON.parse(localStorage.rssFeed);
       }
     },
 
     fetchRssFeeds(): void {
-      this.rssSources.forEach((rssSource: RssSource) => {
-        const rssCorsProxy = new URL(this.rssCorsProxy);
+      this.rssFeed.forEach((rss: Rss) => {
+        fetch(`${this.rssCorsProxy}${rss.url}`, {
+          headers: {
+            "x-cors-grida-api-key": import.meta.env
+              .VITE_CORS_BRIDGED_API_KEY as string,
+          },
+        })
+          .then((response) => response.text())
+          .then((str) =>
+            new window.DOMParser().parseFromString(str, "text/xml")
+          )
+          .then((data) => {
+            rss.items = Array.from(data.querySelectorAll("item")).map(
+              (item) => {
+                return new RssItem(
+                  item.querySelector("link")?.innerHTML ?? "",
+                  item
+                    .querySelector("title")
+                    ?.innerHTML.replace("<![CDATA[", "")
+                    .replace("]]>", "") ?? ""
+                );
+              }
+            );
 
-        rssCorsProxy.searchParams.append("url", rssSource.url);
-
-        fetch(rssCorsProxy.toString())
-          .then((response) => response.json())
-          .then((rss: Rss) => {
-            rssSource.feed = rss.feed;
-            localStorage.rssSources = JSON.stringify(this.rssSources);
+            localStorage.rssFeed = JSON.stringify(this.rssFeed);
           });
       });
     },
 
-    activateRssSource(rssSource: RssSource) {
-      if (!rssSource.active) {
-        this.rssSources.forEach(
-          (rssSource: RssSource) => (rssSource.active = false)
-        );
+    activateRssSource(rss: Rss) {
+      if (!rss.active) {
+        this.rssFeed.forEach((rss: Rss) => (rss.active = false));
 
-        rssSource.active = true;
+        rss.active = true;
       }
     },
 
     activateRandomRssSource() {
-      const randomIndex = Math.floor(Math.random() * this.rssSources.length);
-      const randomRssSource = this.rssSources[randomIndex];
+      const randomIndex = Math.floor(Math.random() * this.rssFeed.length);
+      const randomRssSource = this.rssFeed[randomIndex];
 
       this.activateRssSource(randomRssSource);
     },

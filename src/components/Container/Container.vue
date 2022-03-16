@@ -37,6 +37,11 @@ export default defineComponent({
       if (this.loaded) {
         const resizedImage = new URL("https://images.weserv.nl");
 
+        resizedImage.searchParams.append(
+          "url",
+          this.backgroundImage.normalize()
+        );
+
         resizedImage.searchParams.append("url", this.backgroundImage);
         resizedImage.searchParams.append("w", this.backgroundImageWidth);
         resizedImage.searchParams.append("h", this.backgroundImageHeight);
