@@ -2,37 +2,33 @@
   <nav class="navigation">
     <a
       href="#"
-      v-for="rssSource in rssSources"
-      :key="rssSource.id"
-      @click="click(rssSource)"
-      :class="['item', rssSource.active ? 'active' : '']"
+      v-for="rss in rssFeed"
+      :key="rss.id"
+      @click="click(rss)"
+      :class="['item', rss.active ? 'active' : '']"
     >
-      <img
-        :src="`./images/${rssSource.logo}`"
-        :alt="rssSource.title"
-        class="logo"
-      />
+      <img :src="`./images/${rss.logo}`" :alt="rss.name" class="logo" />
     </a>
   </nav>
 </template>
 
 <script lang="ts">
 import { defineComponent, PropType } from "vue";
-import { RssSource } from "../../models/rss-source.model";
+import { Rss } from "../../models/rss.model";
 
 export default defineComponent({
   name: "RssNavigation",
 
   props: {
-    rssSources: {
-      type: Array as PropType<RssSource[]>,
+    rssFeed: {
+      type: Array as PropType<Rss[]>,
       required: true,
     },
   },
 
   methods: {
-    click(rssSource: RssSource) {
-      this.$emit("navigationItemClick", rssSource);
+    click(rss: Rss) {
+      this.$emit("navigationItemClick", rss);
     },
   },
 

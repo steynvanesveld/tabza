@@ -1,21 +1,25 @@
 [
   {
     "id": 1,
-    "url": "http://feeds.nos.nl/nosnieuwsalgemeen",
+    "name": "NOS",
+    "url": "http://feeds.nos.nl/nosnieuwsalgemeen?format=xml",
     "logo": "nos.svg"
   },
   {
     "id": 2,
-    "url": "http://feeds.feedburner.com/tweakers/nieuws",
+    "name": "Tweakers",
+    "url": "http://feeds.feedburner.com/tweakers/nieuws?format=xml",
     "logo": "tweakers.svg"
   },
   {
     "id": 3,
+    "name": "CSS-Tricks",
     "url": "http://css-tricks.com/feed",
     "logo": "css-tricks.svg"
   },
   {
     "id": 4,
+    "name": "Smashing Magazine",
     "url": "https://www.smashingmagazine.com/feed",
     "logo": "smashing-magazine.svg"
   }
