@@ -29,8 +29,9 @@ Run `npm run dev` for a dev server. Navigate to `http://localhost:3000/`.
 
 ### Build
 
-Run `npm run build` for a full build of the project which is used by the chrome extension
-Combine both the dist folder and the manifest.json into one zip to upload.
+Run `npm run build` for a full build of the project which is used by the chrome extension.
+
+Combine the `dist` and `public` folders, together with the `manifest.json` into one zip to upload it to the Chrome Web Store.
 
 ### Install the final build as a chrome extension
 
