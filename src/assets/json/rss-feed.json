@@ -7,20 +7,14 @@
   },
   {
     "id": 2,
-    "name": "Tweakers",
-    "url": "http://feeds.feedburner.com/tweakers/nieuws?format=xml",
-    "logo": "tweakers.svg"
+    "name": "RTV Drenthe",
+    "url": "https://www.rtvdrenthe.nl/rss/index.xml",
+    "logo": "rtv-drenthe.svg"
   },
   {
     "id": 3,
-    "name": "CSS-Tricks",
-    "url": "http://css-tricks.com/feed",
-    "logo": "css-tricks.svg"
-  },
-  {
-    "id": 4,
-    "name": "Smashing Magazine",
-    "url": "https://www.smashingmagazine.com/feed",
-    "logo": "smashing-magazine.svg"
+    "name": "Tweakers",
+    "url": "https://tweakers.net/feeds/mixed.xml",
+    "logo": "tweakers.svg"
   }
 ]

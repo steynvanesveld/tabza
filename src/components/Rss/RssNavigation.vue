@@ -62,7 +62,6 @@ export default defineComponent({
       max-height: 24px;
       height: 100%;
       object-fit: contain;
-      filter: brightness(0) invert(1);
     }
   }
 }
